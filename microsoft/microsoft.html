@@ -13,6 +13,7 @@
 
     <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./css/microsoft.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 </head>
 
 <body>
@@ -293,24 +294,60 @@
     <main>
         <section id="carousel">
             <div class="container">
-                <div class="carousel-container">
-                    <div class="carousel-picture"></div>
-                    <div class="carousel-text">
-                        <a href="" class="on-the-market">
-                            <span>新上市</span>
-                        </a>
-                        <a href="" class="carousel-title">
-                            <h1>Surface Go 3</h1>
-                        </a>
-                        <a href="" class="carousel-info">
-                            <p>最方便攜帶的 Surface 變形平板電腦，最適合用來執行每日工作、家庭作業，以及玩樂。現在搭載 Windows 11。</p>
-                        </a>
-                        <a href="" class="buy-btn" style="color: white;">
-                            <span>立即選購</span>
-                            <i class="fa-solid fa-angle-right"></i>
-                        </a>
+                <!-- Slider main container -->
+                <div class="swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <div class="carousel-container-1">
+                                <div class="carousel-picture picture-1"></div>
+                                <div class="carousel-text text-1">
+                                    <a href="" class="on-the-market">
+                                        <span>新上市</span>
+                                    </a>
+                                    <a href="" class="carousel-title-1">
+                                        <h1>Surface Go 3</h1>
+                                    </a>
+                                    <a href="" class="carousel-info-1">
+                                        <p>最方便攜帶的 Surface 變形平板電腦，最適合用來執行每日工作、家庭作業，以及玩樂。現在搭載 Windows 11。</p>
+                                    </a>
+                                    <a href="" class="buy-btn-1" style="color: white;">
+                                        <span>立即選購</span>
+                                        <i class="fa-solid fa-angle-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="carousel-container-2">
+                                <div class="carousel-picture picture-2"></div>
+                                <div class="carousel-text text-2">
+                                    <a href="" class="on-the-market">
+                                        <span>新上市</span>
+                                    </a>
+                                    <a href="" class="carousel-title-2">
+                                        <h1>專為今天和明天的生活而設計</h1>
+                                    </a>
+                                    <a href="" class="carousel-info-2">
+                                        <p>新一代遊戲、 您的目標、 親朋好友。 Windows 11 是為了讓您更貼近所喜愛的一切。</p>
+                                    </a>
+                                    <a href="" class="buy-btn-2">
+                                        <span>查看您的電腦是否準備就緒</span>
+                                        <i class="fa-solid fa-angle-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+    
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev" style="color: black;"></div>
+                    <div class="swiper-button-next" style="color: black;"></div>
                 </div>
+            </div>
         </section>
 
         <section id="product-market">
@@ -469,6 +506,7 @@
                             </a>
                         </div>
                         <div class="business-card">
+                            <a href="">
                             <div class="thumbnail" style="background-image: url(./img/besiness4.webp);"></div>
                             <h3>歡迎使用 Windows 365 雲端電腦</h3>
                             <p>從 Microsoft 雲端安全地將您的 Windows 體驗串流到任何裝置。</p>
@@ -666,6 +704,27 @@
             </div>
         </section>
     </footer>
+
+
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            // Optional parameters
+            loop: true,
+            
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
 </body>
 
 </html>

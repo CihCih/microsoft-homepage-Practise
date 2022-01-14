@@ -62,7 +62,7 @@ body {
     padding: 0 8px;
 }
 
-.menu > li > a{
+.menu > li > a {
     color: #262626;
     text-decoration: none;
     font-size: 13px;
@@ -74,19 +74,18 @@ body {
     text-decoration: underline;
 } */
 
-.menu a:hover::before{
+.menu a:hover::before {
     height: 2px;
 }
 
-.menu a::before{
-    content: '';
+.menu a::before {
+    content: "";
     position: absolute;
     width: 100%;
     height: 0px;
     background-color: black;
     bottom: -4px;
 }
-
 
 .other-menu {
     display: flex;
@@ -111,8 +110,9 @@ body {
     padding: 0 20px 0 15px;
 }
 
-.all-sitemap span {
+.all-sitemap span, .all-sitemap i{
     font-size: 13px;
+    cursor: pointer;
 }
 
 .member {
@@ -156,11 +156,8 @@ body {
     margin: 8px;
 }
 
-
-
-
 /* 選單 */
-.microsoft-container{
+.microsoft-container {
     position: absolute;
     z-index: 1;
     display: flex;
@@ -176,37 +173,38 @@ body {
     display: none;
 }
 
-.all-microsoft{
-    display: flex; 
+.all-microsoft {
+    display: flex;
     font-size: 13px;
 }
 
-.all-microsoft>ul{
+.all-microsoft > ul {
     width: 200px;
     list-style-type: none;
     margin: 0;
     padding: 0 0 10px;
 }
 
-h5, .all-microsoft>ul li{
+h5,
+.all-microsoft > ul li {
     font-size: 13px;
 }
 
-h5{
+h5 {
     font-weight: 600;
     margin: 0;
     padding: 18px 0 18px 24px;
 }
 
-.all-microsoft>ul a:hover{
+.all-microsoft > ul a:hover {
     text-decoration: underline;
 }
 
-.all-microsoft>ul li{
+.all-microsoft > ul li {
     padding: 12px 0 12px 24px;
 }
 
-.map{
+.map {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -215,24 +213,29 @@ h5{
     background-color: #e6e6e6;
 }
 
-.map>i{
+.map > i {
     margin: 1px 0 0 5px;
 }
 
 /* checkbox */
-    #microsoft-burger:checked + .microsoft-container{
-    display:block;
-    }
-    #microsoft-burger{
-        display: none;
-    }
+#microsoft-burger:checked + .microsoft-container {
+    display: block;
+}
+#microsoft-burger {
+    display: none;
+}
+
 
 
 
 
 /* main-carousel */
+.container>.swiper{
+    width: 100%;
+    z-index: 0;
+}
 
-.carousel-container,
+.carousel-container-1, .carousel-container-2,
 .onedrive-container {
     position: relative;
     width: 100%;
@@ -240,7 +243,7 @@ h5{
     /* background-color: cornflowerblue; */
 }
 
-.carousel-picture {
+.picture-1 {
     /* position: absolute; */
     background-image: url(/img/1600x600.webp);
     width: 100%;
@@ -248,7 +251,7 @@ h5{
     background-size: cover;
 }
 
-.carousel-text {
+.text-1 {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -257,7 +260,8 @@ h5{
     top: 50px;
 }
 
-.carousel-text > a {
+.text-1 > a,
+.text-2 > a {
     text-decoration: none;
     color: black;
 }
@@ -273,13 +277,14 @@ h5{
     font-weight: bold;
 }
 
-.carousel-title > h1 {
+.carousel-title-1 > h1 {
     font-size: 34px;
     margin: 3px 0 0 0;
     font-weight: 600;
 }
 
-.buy-btn, .learn{
+.buy-btn-1,
+.learn {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -290,21 +295,26 @@ h5{
     margin-top: 12px;
 }
 
-.buy-btn *, .learn *{
+.buy-btn-1 *,
+.learn * {
     transition-duration: 0.3s;
 }
 
-.buy-btn>span, .learn>span{
+.buy-btn-1 > span,
+.buy-btn-2 > span,
+.learn > span {
     position: relative;
     display: inline-block;
 }
 
-.buy-btn>span:hover::before, .learn>span:hover::before{
+.buy-btn-1 > span:hover::before, .buy-btn-2 > span:hover::before,
+.learn > span:hover::before {
     height: 2px;
 }
 
-.buy-btn>span::before, .learn>span::before{
-    content: '';
+.buy-btn-1 > span::before,
+.learn > span::before {
+    content: "";
     position: absolute;
     width: 100%;
     height: 0px;
@@ -312,12 +322,71 @@ h5{
     bottom: -1px;
 }
 
-.buy-btn > i, .learn > i{
+.buy-btn-2 > span::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0px;
+    background-color: black;
+    bottom: -1px;
+}
+
+.buy-btn-1 > i, .buy-btn-2 > i,
+.learn > i {
     margin-left: 10px;
 }
 
-.buy-btn:hover > i, .learn:hover > i{
+.buy-btn-1:hover > i, .buy-btn-2:hover > i,
+.learn:hover > i {
     margin-left: 20px;
+}
+
+/* 2 */
+.picture-2 {
+    background-image: url(/img/1600600.webp);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+.text-2 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 520px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 90px;
+}
+
+.carousel-title-2 > h1 {
+    font-size: 34px;
+    margin: 3px 0 0 0;
+    font-weight: 600;
+    color: white;
+}
+
+.carousel-info-2 > p {
+    color: white;
+}
+
+.buy-btn-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 243px;
+    height: 40px;
+    background-color: white;
+    font-weight: bold;
+    margin-top: 12px;
+}
+
+.buy-btn-2 > i{
+    margin-top: 2px;
+}
+
+.swiper .swiper-pagination-bullet {
+    background: black;
 }
 
 
@@ -376,9 +445,6 @@ h5{
     text-decoration: underline;
 }
 
-
-
-
 /* main-info */
 
 .row {
@@ -401,16 +467,16 @@ h5{
     margin-top: 48px;
 }
 
-.thumbnail:hover::after{
+.thumbnail:hover::after {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-.thumbnail::after{
-    content: '';
+.thumbnail::after {
+    content: "";
     position: absolute;
     z-index: 1;
-    width: 20%;
-    height: 24vh;
+    width: 21.5%;
+    height: 12vw;
     /* background-color: rgba(0, 0, 0, 0.4); */
 }
 
@@ -461,17 +527,17 @@ h3 {
     text-decoration: underline;
 } */
 
-.now>span{
+.now > span {
     position: relative;
     display: inline-block;
 }
 
-.now>span:hover::before{
+.now > span:hover::before {
     height: 2px;
 }
 
-.now>span::before{
-    content: '';
+.now > span::before {
+    content: "";
     position: absolute;
     width: 100%;
     height: 0px;
@@ -516,17 +582,13 @@ h3 {
     margin: 0;
 }
 
-.onedrive-info>p{
+.onedrive-info > p {
     margin-bottom: 25px;
 }
 
 .learn > i {
     margin: 1px 0 0 10px;
 }
-
-
-
-
 
 /* business */
 
@@ -536,7 +598,7 @@ h3 {
     padding-top: 48px;
 }
 
-#business .row .col-6{
+#business .row .col-6 {
     margin-top: 18px;
 }
 
@@ -627,8 +689,6 @@ h4 {
     padding: 8px 0;
 }
 
-
-
 /* language */
 
 .base {
@@ -695,10 +755,20 @@ h4 {
         padding: 13px 9px 30px;
     }
 
-    .carousel-text {
+    .text-1 {
         width: 440px;
         top: 30px;
         right: 70px;
+    }
+
+    .text-1 h1,
+    .text-2 h1 {
+        font-size: 24px;
+    }
+
+    .text-2 {
+        width: 440px;
+        left: 70px;
     }
 
     .onedrive-text {
@@ -711,17 +781,16 @@ h4 {
 }
 
 @media screen and (max-width: 1229px) {
-    .microsoft-container{
+    .microsoft-container {
         width: 1023px;
         height: 656px;
         right: 50%;
         transform: translateX(50%);
     }
 
-    .all-microsoft{
+    .all-microsoft {
         flex-wrap: wrap;
     }
-
 }
 
 @media screen and (max-width: 1083px) {
@@ -729,21 +798,32 @@ h4 {
         padding: 0 24px;
     }
 
-    #carousel > .container, #onedrive > .container{
+    #carousel > .container,
+    #onedrive > .container {
         width: 100%;
         padding: 0;
     }
 
-    .carousel-container,.onedrive-container {
+    .carousel-container-1, .carousel-container-2,
+    .onedrive-container {
         height: 54.8vw;
     }
 
-    .carousel-picture{
+    .picture-1 {
         background-image: url(/img/1083x609.webp);
     }
 
-    .carousel-text{
+    .text-1,
+    .text-2 {
         width: 340px;
+    }
+
+    .picture-2 {
+        background-image: url(/img/1083609.webp);
+    }
+
+    .swiper {
+        height: 54.8vw;
     }
 
     .row {
@@ -759,19 +839,24 @@ h4 {
         height: 25vw;
     }
 
-    .onedrive-picture{
+    .thumbnail::after {
+        width: 45%;
+        height: 25vw;
+    }
+
+    .onedrive-picture {
         background-image: url(/img/one1083.webp);
     }
 
-    .onedrive-text{
+    .onedrive-text {
         width: 340px;
     }
 
-    #business .row .right-col{
+    #business .row .right-col {
         margin: 0;
     }
 
-    .right-col>.business-card{
+    .right-col > .business-card {
         margin-top: 48px;
     }
 
@@ -809,12 +894,11 @@ h4 {
 }
 
 @media screen and (max-width: 1024px) {
-    .microsoft-container{
+    .microsoft-container {
         width: 818px;
         height: 738px;
     }
-
-    }
+}
 
 @media screen and (max-width: 886px) {
     .menu > li:nth-child(5),
@@ -830,11 +914,15 @@ h4 {
         font-size: 13px;
     }
 
-    .menu-more>li:last-child{
+    .menu>li:last-child label{
+        cursor: pointer;
+    } 
+
+    .menu-more > li:last-child {
         display: none;
     }
 
-    .menu-more{
+    .menu-more {
         position: absolute;
         list-style-type: none;
         padding: 0;
@@ -842,31 +930,31 @@ h4 {
         bottom: -110px;
         z-index: 1;
         display: none;
-        border: solid 1px ;
+        border: solid 1px;
         border-color: rgba(223, 223, 223, 0.6);
     }
-    
-    .menu-more-item{
+
+    .menu-more-item {
         padding: 18px 120px 18px 24px;
     }
 
-    .menu-more-link{
+    .menu-more-link {
         font-size: 13px;
         text-decoration: none;
         color: #262626;
     }
 
     /* checkbox */
-    label{
+    label {
         display: block;
     }
 
-    #burger:checked + .menu-more{
-        display:block;
+    #burger:checked + .menu-more {
+        display: block;
     }
 
-    #burger{
-            display: none;
+    #burger {
+        display: none;
     }
 }
 
@@ -875,11 +963,11 @@ h4 {
         display: none;
     }
 
-    .menu-more>li:last-child{
+    .menu-more > li:last-child {
         display: block;
     }
 
-    .menu-more{
+    .menu-more {
         bottom: -165px;
     }
 }
@@ -896,6 +984,10 @@ h4 {
 
     .menu-bars-btn > i {
         font-size: 20px;
+    }
+
+    .menu-bars-btn label{
+        cursor: pointer;
     }
 
     .logo {
@@ -919,7 +1011,7 @@ h4 {
         left: 45px;
     }
 
-    .nav-bar{
+    .nav-bar {
         position: absolute;
         list-style-type: none;
         padding: 0;
@@ -932,48 +1024,50 @@ h4 {
         display: none;
     }
 
-    .nav-bar>li{
+    .nav-bar > li {
         padding: 14px 24px 15px 15px;
         margin: 1px;
         border-bottom: solid 1px #e6e6e6;
     }
 
-    .nav-bar a{
+    .nav-bar a {
         text-decoration: none;
         color: #262626;
     }
 
     /* checkbox */
-    label{
+    label {
         display: block;
     }
 
-    #nav-burger:checked + .nav-bar{
-        display:block;
+    #nav-burger:checked + .nav-bar {
+        display: block;
     }
 
-    #nav-burger{
-            display: none;
+    #nav-burger {
+        display: none;
     }
 }
 
 @media screen and (max-width: 767px) {
-    .carousel-container, .onedrive-container{
+    .carousel-container-1,
+    .onedrive-container {
         width: 100%;
         height: 100%;
         background-color: #e6e6e6;
     }
 
-    .carousel-picture, .onedrive-picture{
+    .carousel-picture,
+    .onedrive-picture {
         position: relative;
         height: 56.19vw;
     }
 
-    .carousel-picture{
+    .picture-1 {
         background-image: url(/img/767x431.webp);
     }
 
-    .carousel-text{
+    .text-1 {
         position: unset;
         display: flex;
         justify-content: center;
@@ -986,15 +1080,50 @@ h4 {
         right: 0;
     }
 
-    .carousel-title>h1, .onedrive-title>h2{
+    .carousel-title-1 > h1,
+    .carousel-title-2 > h1,
+    .onedrive-title > h2 {
         font-size: 20px;
     }
 
-    .carousel-info>p{
+    .carousel-info-1 > p {
         margin: 10px 0 6px;
     }
 
-    #product-market > .container{
+    .carousel-container-2 {
+        width: 100%;
+        height: 100%;
+        background-color: #333;
+    }
+
+    .picture-2 {
+        background-image: url(/img/767431.webp);
+    }
+
+    .text-2 {
+        position: unset;
+        /* display: flex; */
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        margin: 0 auto;
+        height: 320px;
+        width: 82.95vw;
+        transform: none;
+    }
+
+    .carousel-info-2 > p {
+        margin: 5px 0 4px;
+    }
+
+    .buy-btn-2 {
+        margin-top: 10px;
+    }
+
+    .swiper {
+        height: 100%;
+    }
+    #product-market > .container {
         text-align: unset;
     }
 
@@ -1009,7 +1138,9 @@ h4 {
         align-items: center;
     }
 
-    .microsoft, .surface, .windows {
+    .microsoft,
+    .surface,
+    .windows {
         display: flex;
     }
 
@@ -1017,17 +1148,18 @@ h4 {
         width: 200px;
     }
 
-    .market-img1, .market-img2{
+    .market-img1,
+    .market-img2 {
         width: 20px;
         height: 20px;
-        margin: 0 8px 0 0 ;
+        margin: 0 8px 0 0;
     }
 
-    .onedrive-picture{
+    .onedrive-picture {
         background-image: url(/img/one767.webp);
     }
 
-    .onedrive-text{
+    .onedrive-text {
         position: unset;
         display: flex;
         justify-content: center;
@@ -1041,39 +1173,42 @@ h4 {
         transform: none;
     }
 
-    .onedrive-info>p{
+    .onedrive-info > p {
         margin: 4px 0 2px;
     }
-    
-    .base{
+
+    .base {
         flex-direction: column;
         align-items: unset;
     }
 
-    .about{
+    .about {
         margin-top: 20px;
     }
 
-    .about a li, .about p{
+    .about a li,
+    .about p {
         padding: 0 4px 0 6px;
     }
 }
 
 @media screen and (max-width: 539px) {
-    .carousel-text, .onedrive-text{
+    .carousel-text,
+    .onedrive-text {
         height: 280px;
     }
 
-    .col-6{
+    .col-6 {
         flex-wrap: wrap;
         gap: unset;
     }
 
-    .left-col>.business-card:last-child{
-    margin-top: 48px;
+    .left-col > .business-card:last-child {
+        margin-top: 48px;
     }
 
-    .product-card, .business-card{
+    .product-card,
+    .business-card {
         width: 100%;
     }
 
@@ -1081,43 +1216,50 @@ h4 {
         height: 50.28vw;
     }
 
-    h3{
+    .thumbnail::after {
+        width: 90%;
+        height: 50vw;
+    }
+
+    h3 {
         margin: 12px 0 0;
         font-size: 18px;
     }
 
-    #all-nav{
+    #all-nav {
         height: 1496px;
     }
 
-    .l-nav, .r-nav{
+    .l-nav,
+    .r-nav {
         width: 100%;
     }
 
-    .about a li, .about p{
+    .about a li,
+    .about p {
         padding: 0 10px 0 0;
     }
 }
 
 @media screen and (max-width: 538px) {
-    .carousel-text, .onedrive-text{
+    .carousel-text,
+    .onedrive-text {
         height: 340px;
     }
 }
 
 @media screen and (max-width: 528px) {
-    .about{
+    .about {
         flex-wrap: wrap;
     }
 }
 
 @media screen and (max-width: 512px) {
-    .about{
+    .about {
         margin-top: 14px;
     }
-    .about>a, .about>p{
+    .about > a,
+    .about > p {
         padding-top: 6px;
     }
-
 }
-
